@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Projet2</title>
+	
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+    <section class="exo">
+		<h1>Projet 2</h1>
+		<div id="specification">
+			<form action="#" method="get" >
+				<p>
+					<!-- b -->
+					<label for="nombre_type">Le nombre b de types de bières : </label>
+					<input name="nombre_type" id="nombre_type" type="number" placeholder="Exemple 5" min="0" required value="5"/> <br />
+					<!-- s -->
+					<label for="stock_initial">Le stock s initial de bières (d’un type) : </label>
+					<input name="stock_initial" id="stock_initial" type="number" placeholder="Exemple 2" min="0" required value="2"/> <br />
+					<!-- n -->
+					<label for="nombre_repetition">Le nombre entier n de répétitions de la modélisation du premier achat : </label>
+					<input name="nombre_repetition" id="nombre_repetition" type="number" placeholder="Exemple 1000" min="0" required value="1000" />
+				</p>
+				<button type="submit">Valider</button>
+			</form>
+		</div>
+		<div id="resultat">
+			<!-- les prix des bières, générés aléatoirement : chacun devra être compris entre (s×b/20) euros et (s×b/5) euros. Ils devront avoir 2 chiffres obligatoires derrière la virgule (symbolisée par une virgule ou un point à chaque fois) et être séparés par une espace. -->
+			<div class="reponse">
+				<span class="libele">Prix des bières :</span>
+				<span id="prix_bieres"></span>
+			</div>
+			
+			
+			<!-- les arrondis des probabilités d’achat de chacune de ces bières (dans le même ordre qu’au-dessus : la première probabilité doit être celle de la bière qui a pour prix le premier de la 1e ligne), avec 3 chiffres obligatoires derrière la virgule (ou point), séparés par une espace. -->
+			<div class="reponse">
+				<span class="libele">Probabilités d’achat :</span>
+				<span id="probabilites_achat"></span>
+			</div>
+			
+			<!-- pour chaque bière, le nombre (entier) de fois elle aura été sélectionnée lors des n répétitions de la modélisation de l’achat de la première bière, séparés par une espace (et toujours dans le même ordre) -->
+			<div class="reponse">
+				<span class="libele">Nombre de selection :</span>
+				<span id="nombre_selection"></span>
+			</div>
+			
+			<!-- prix actuels des bières (ligne 4 : après 1 vente, ligne 5 : après deux ventes, . . . ), toujours dans le même ordre, et toujours avec 2 chiffres obligatoires derrière la virgule (ou point) et séparés par une espace. Cette partie correspond à la simulation complète des ventes d’une soirée, à partir des prix initiaux de la première ligne, chaque bière ayant un stock s. En particulier, la ligne des prix après le dernier achat possible ne comportera que des 0.00, vu que toutes les bières auront été vendues -->
+			<div class="reponse">
+				<span class="libele">Prix actuels des bières :</span>
+				<span id="prix_actuels_bieres"></span>
+			</div>
+			
+			<!-- profit de l’association étudiante, avec 2 chiffres obligatoires derrière la virgule (ou point), avec un signe - devant si le profit est négatif, rien dans le cas contraire -->
+			<div class="reponse">
+				<span class="libele">Profit :</span>
+				<span id="profit"></span>
+			</div>
+		</div>
+		</section>
+	</div>
+		<script src="main.js"></script>
+</body>
+</html>
